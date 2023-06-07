@@ -1,1 +1,11 @@
-<p>products works!</p>
+<div style="height: 400px">
+  <ag-grid-angular
+    style="height: 100%"
+    class="ag-theme-alpine"
+    [rowData]="products$ | async"
+    [columnDefs]="columnDefs"
+    [gridOptions]="gridOptions"
+    [pagination]="true"
+    [paginationPageSize]="paginationPageSize"
+  ></ag-grid-angular>
+</div>
