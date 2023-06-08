@@ -21,6 +21,7 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
   font-size: 14px;
+  color: var(--ink-color);
 }
 
 .ag-ltr .ag-cell-focus:not(.ag-cell-range-selected):focus-within {
