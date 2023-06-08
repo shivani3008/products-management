@@ -1,4 +1,16 @@
 <div>
-  <router-outlet></router-outlet>
-  <footer>Shivaniben</footer>
+  <app-header></app-header>
+  <div>
+    <app-sidebar></app-sidebar>
+    <div class="container flex flex-col">
+      <div class="flex-1 px-10 py-5">
+        <router-outlet></router-outlet>
+      </div>
+      <footer
+        class="bg-mist h-16 border-silver border-t flex items-center justify-end pr-5"
+      >
+        Shivaniben Pathak
+      </footer>
+    </div>
+  </div>
 </div>

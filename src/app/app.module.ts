@@ -10,9 +10,17 @@ import { ProductsEffect } from 'src/store/products/products.effects';
 import { ProductsModule } from './components/products/products.module';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './components/header/header.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
-  declarations: [AppComponent, PageNotFoundComponent],
+  declarations: [
+    AppComponent,
+    PageNotFoundComponent,
+    HeaderComponent,
+    SidebarComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -21,6 +29,7 @@ import { HttpClientModule } from '@angular/common/http';
     EffectsModule.forRoot([ProductsEffect]),
     ProductsModule,
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

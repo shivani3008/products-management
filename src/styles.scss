@@ -1,9 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
 @import "ag-grid-community/styles/ag-grid.css";
 @import "ag-grid-community/styles/ag-theme-alpine.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --header-height: 64px;
+  --sidebar-width: 64px;
+
+  --silver-color: #e1e3e6;
+  --mist-color: #f7f7f9;
+  --primary-color-800: #61291c;
+  --primary-color-50: #ffe4cc;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 .ag-ltr .ag-cell-focus:not(.ag-cell-range-selected):focus-within {
   border: 0;
@@ -11,13 +28,4 @@
 
 .ag-paging-panel {
   justify-content: center;
-}
-
-html,
-body {
-  height: 100%;
-}
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
