@@ -7,6 +7,7 @@ import { selectProducts } from 'src/store/products/products.selectors';
 import { AppStateInterface } from 'src/types/appState.interface';
 import { Observable } from 'rxjs';
 import { ChipsCellRendererComponent } from './chips-cell-renderer/chips-cell-renderer.component';
+import { ImageRendererComponent } from './image-renderer/image-renderer.component';
 
 @Component({
   selector: 'app-products',
@@ -15,6 +16,12 @@ import { ChipsCellRendererComponent } from './chips-cell-renderer/chips-cell-ren
 })
 export class ProductsComponent {
   columnDefs: ColDef[] = [
+    {
+      width: 80,
+      cellRenderer: ImageRendererComponent,
+      resizable: false,
+      filter: false,
+    },
     { field: 'id', headerName: 'Id', width: 100 },
     { field: 'blend_name', headerName: 'Blend Name' },
     {
