@@ -2,10 +2,7 @@ import { createSelector } from '@ngrx/store';
 import { AppStateInterface } from 'src/types/appState.interface';
 import { ProductsStateInterface } from 'src/types/productsState.interface';
 
-const selectFeature = (state: AppStateInterface) => {
-  console.log(state);
-  return state.products;
-};
+const selectFeature = (state: AppStateInterface) => state.products;
 
 export const selectProducts = createSelector(
   selectFeature,

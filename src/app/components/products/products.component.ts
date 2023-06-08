@@ -6,6 +6,7 @@ import { getProducts } from 'src/store/products/products.actions';
 import { selectProducts } from 'src/store/products/products.selectors';
 import { AppStateInterface } from 'src/types/appState.interface';
 import { Observable } from 'rxjs';
+import { ChipsCellRendererComponent } from './chips-cell-renderer/chips-cell-renderer.component';
 
 @Component({
   selector: 'app-products',
@@ -14,13 +15,23 @@ import { Observable } from 'rxjs';
 })
 export class ProductsComponent {
   columnDefs: ColDef[] = [
-    { field: 'id', headerName: 'Id' },
+    { field: 'id', headerName: 'Id', width: 100 },
     { field: 'blend_name', headerName: 'Blend Name' },
-    { field: 'origin', headerName: 'Origin' },
+    {
+      field: 'origin',
+      headerName: 'Origin',
+      cellRenderer: ChipsCellRendererComponent,
+      minWidth: 250,
+      flex: 1,
+    },
     { field: 'variety', headerName: 'Variety' },
-    { field: 'notes', headerName: 'Notes' },
-    { field: 'intensifier', headerName: 'Intensifier' },
+    { field: 'notes', headerName: 'Notes', flex: 1 },
+    { field: 'intensifier', headerName: 'Intensifier', flex: 1 },
   ];
+  defaultColDef: ColDef = {
+    resizable: true,
+    filter: true,
+  };
   gridOptions: GridOptions = {
     rowSelection: 'single',
   };

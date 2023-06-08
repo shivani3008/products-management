@@ -1,10 +1,11 @@
-<h2 data-test-id="page-title">Products</h2>
+<h2 class="text-ink text-lg">Products</h2>
 <div style="height: 400px">
   <ag-grid-angular
     style="height: 100%"
-    class="ag-theme-alpine"
+    class="ag-theme-material"
     [rowData]="products$ | async"
     [columnDefs]="columnDefs"
+    [defaultColDef]="defaultColDef"
     [gridOptions]="gridOptions"
     [pagination]="true"
     [paginationPageSize]="paginationPageSize"

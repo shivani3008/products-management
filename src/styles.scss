@@ -1,5 +1,5 @@
 @import "ag-grid-community/styles/ag-grid.css";
-@import "ag-grid-community/styles/ag-theme-alpine.css";
+@import "ag-grid-community/styles/ag-theme-material.css";
 
 @tailwind base;
 @tailwind components;
@@ -12,7 +12,7 @@
   --silver-color: #e1e3e6;
   --mist-color: #f7f7f9;
   --primary-color-800: #61291c;
-  --primary-color-50: #ffe4cc;
+  --ink-color: #52505f;
 }
 
 html,
@@ -20,6 +20,7 @@ body {
   height: 100%;
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 14px;
 }
 
 .ag-ltr .ag-cell-focus:not(.ag-cell-range-selected):focus-within {
@@ -28,4 +29,10 @@ body {
 
 .ag-paging-panel {
   justify-content: center;
+}
+
+.ag-theme-material {
+  & .mdc-evolution-chip-set__chips {
+    flex-wrap: nowrap;
+  }
 }
