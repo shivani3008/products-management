@@ -23,10 +23,13 @@ import { Router } from '@angular/router';
 export class ProductsComponent {
   columnDefs: ColDef[] = [
     {
+      field: 'image',
+      headerName: '',
       width: 80,
       cellRenderer: ImageRendererComponent,
       resizable: false,
       filter: false,
+      cellStyle: { display: 'flex', alignItems: 'center' },
     },
     { field: 'id', headerName: 'Id', width: 100 },
     { field: 'blend_name', headerName: 'Blend Name' },

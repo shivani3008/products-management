@@ -4,7 +4,6 @@ import { createReducer, on } from '@ngrx/store';
 
 const initialState: ProductsStateInterface = {
   products: [],
-  selectedProduct: null,
 };
 
 export const reducer = createReducer(

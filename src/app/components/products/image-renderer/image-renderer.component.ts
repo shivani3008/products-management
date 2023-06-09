@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ICellRendererAngularComp } from 'ag-grid-angular';
+import { ICellRendererParams } from 'ag-grid-community';
 
 @Component({
   selector: 'app-image-renderer',
@@ -7,7 +8,11 @@ import { ICellRendererAngularComp } from 'ag-grid-angular';
   styleUrls: ['./image-renderer.component.scss'],
 })
 export class ImageRendererComponent implements ICellRendererAngularComp {
-  agInit(): void {}
+  src: string = '';
+
+  agInit(params: ICellRendererParams): void {
+    this.src = params.value;
+  }
 
   refresh(): boolean {
     return false;

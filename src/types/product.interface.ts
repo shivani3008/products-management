@@ -6,4 +6,5 @@ export interface ProductInterface {
   variety: string;
   notes: string;
   intensifier: string;
+  image?: string;
 }

@@ -25,16 +25,16 @@ body {
   color: var(--ink-color);
 }
 
-.ag-ltr .ag-cell-focus:not(.ag-cell-range-selected):focus-within {
-  border: 0;
-}
-
-.ag-paging-panel {
-  justify-content: center;
-}
-
 .ag-theme-material {
-  & .mdc-evolution-chip-set__chips {
+  .ag-ltr .ag-cell-focus:not(.ag-cell-range-selected):focus-within {
+    border: 0;
+  }
+
+  .ag-paging-panel {
+    justify-content: center;
+  }
+
+  .mdc-evolution-chip-set__chips {
     flex-wrap: nowrap;
   }
 }
