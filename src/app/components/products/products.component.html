@@ -9,5 +9,7 @@
     [gridOptions]="gridOptions"
     [pagination]="true"
     [paginationPageSize]="paginationPageSize"
+    (gridReady)="onGridReady($event)"
+    (selectionChanged)="onSelectionChanged()"
   ></ag-grid-angular>
 </div>

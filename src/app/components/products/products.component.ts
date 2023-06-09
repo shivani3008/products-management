@@ -1,13 +1,22 @@
 import { Component } from '@angular/core';
 import { ProductInterface } from 'src/types/product.interface';
-import { ColDef, GridOptions } from 'ag-grid-community';
+import {
+  ColDef,
+  GridApi,
+  GridOptions,
+  GridReadyEvent,
+} from 'ag-grid-community';
 import { Store, select } from '@ngrx/store';
-import { getProducts } from 'src/store/products/products.actions';
+import {
+  getProducts,
+  setSelectedProduct,
+} from 'src/store/products/products.actions';
 import { selectProducts } from 'src/store/products/products.selectors';
 import { AppStateInterface } from 'src/types/appState.interface';
 import { Observable } from 'rxjs';
 import { ChipsCellRendererComponent } from './chips-cell-renderer/chips-cell-renderer.component';
 import { ImageRendererComponent } from './image-renderer/image-renderer.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-products',
@@ -44,12 +53,23 @@ export class ProductsComponent {
   };
   products$: Observable<ProductInterface[]>;
   paginationPageSize: number = 10;
+  private gridApi!: GridApi<ProductInterface>;
 
-  constructor(private store: Store<AppStateInterface>) {
+  constructor(private store: Store<AppStateInterface>, private router: Router) {
     this.products$ = this.store.pipe(select(selectProducts));
   }
 
   ngOnInit(): void {
     this.store.dispatch(getProducts());
+  }
+
+  onGridReady(params: GridReadyEvent<ProductInterface>) {
+    this.gridApi = params.api;
+  }
+
+  onSelectionChanged() {
+    const selectedRow: ProductInterface = this.gridApi.getSelectedRows()?.[0];
+    this.store.dispatch(setSelectedProduct({ product: selectedRow }));
+    this.router.navigate([`/products/${selectedRow.id}`]);
   }
 }
