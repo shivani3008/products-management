@@ -7,10 +7,7 @@ import {
   GridReadyEvent,
 } from 'ag-grid-community';
 import { Store, select } from '@ngrx/store';
-import {
-  getProducts,
-  setSelectedProduct,
-} from 'src/store/products/products.actions';
+import { getProducts } from 'src/store/products/products.actions';
 import { selectProducts } from 'src/store/products/products.selectors';
 import { AppStateInterface } from 'src/types/appState.interface';
 import { Observable } from 'rxjs';
@@ -69,7 +66,6 @@ export class ProductsComponent {
 
   onSelectionChanged() {
     const selectedRow: ProductInterface = this.gridApi.getSelectedRows()?.[0];
-    this.store.dispatch(setSelectedProduct({ product: selectedRow }));
-    this.router.navigate([`/products/${selectedRow.id}`]);
+    this.router.navigate(['/products', selectedRow.id]);
   }
 }
