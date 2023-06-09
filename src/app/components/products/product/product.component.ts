@@ -18,6 +18,11 @@ export class ProductComponent {
   ) {}
 
   product!: ProductInterface | null;
+  origin: string[] = [];
+  notes: string[] = [];
+
+  convertStringToArray = (str: string) =>
+    str.split(',').map((item: string) => item.trim());
 
   ngOnInit() {
     const productId = this.route.snapshot.paramMap.get('id');
@@ -27,8 +32,14 @@ export class ProductComponent {
     this.store
       .pipe(select(selectProduct(Number(productId))))
       .subscribe((product) => {
-        if (!product) this.router.navigate(['/products']);
+        if (!product) {
+          this.router.navigate(['/products']);
+          return;
+        }
+
         this.product = product;
+        this.origin = this.convertStringToArray(product.origin);
+        this.notes = this.convertStringToArray(product.notes);
       });
   }
 }

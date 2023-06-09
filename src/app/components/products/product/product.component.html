@@ -19,10 +19,33 @@
       consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur
       adipiscing elit.
     </p>
-    <p>Blend Name: {{ product.blend_name }}</p>
-    <p>Origin: {{ product.origin }}</p>
-    <p>Variety: {{ product.variety }}</p>
-    <p>Notes: {{ product.notes }}</p>
-    <p>Intensifier: {{ product.intensifier }}</p>
+    <div>
+      <p class="font-medium !m-0">Blend Name</p>
+      <p>{{ product.blend_name }}</p>
+    </div>
+    <div>
+      <p class="font-medium !m-0">Origin</p>
+      <mat-chip-set class="mb-3">
+        <mat-chip *ngFor="let item of origin" selected>
+          {{ item }}
+        </mat-chip>
+      </mat-chip-set>
+    </div>
+    <div>
+      <p class="font-medium !m-0">Variety</p>
+      <p>{{ product.variety }}</p>
+    </div>
+    <div>
+      <p class="font-medium !m-0">Notes</p>
+      <mat-chip-set class="mb-3">
+        <mat-chip *ngFor="let item of notes">
+          {{ item }}
+        </mat-chip>
+      </mat-chip-set>
+    </div>
+    <div>
+      <p class="font-medium !m-0">Intensifier</p>
+      <p>{{ product.intensifier }}</p>
+    </div>
   </div>
 </div>

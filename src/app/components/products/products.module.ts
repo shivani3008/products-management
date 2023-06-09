@@ -8,6 +8,7 @@ import { ChipsCellRendererModule } from './chips-cell-renderer/chips-cell-render
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { ProductComponent } from './product/product.component';
 import { MatCardModule } from '@angular/material/card';
+import { MatChipsModule } from '@angular/material/chips';
 
 @NgModule({
   declarations: [ProductsComponent, ProductComponent],
@@ -18,6 +19,7 @@ import { MatCardModule } from '@angular/material/card';
     ChipsCellRendererModule,
     AppRoutingModule,
     MatCardModule,
+    MatChipsModule,
   ],
 })
 export class ProductsModule {}
