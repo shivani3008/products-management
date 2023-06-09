@@ -1,1 +1,28 @@
-<div *ngIf="product">{{ product.id }} {{ product.intensifier }}</div>
+<h2 class="text-lg">Product Details</h2>
+<div *ngIf="product" class="grid grid-cols-[1fr_2fr] gap-6">
+  <mat-card>
+    <mat-card-content>
+      <div class="product-image">
+        <img
+          src="../../../../assets/images/placeHolder.png"
+          alt="Product Image"
+          class="w-full h-auto"
+        />
+      </div>
+    </mat-card-content>
+  </mat-card>
+  <div class="product-info">
+    <h2>{{ product.blend_name }}</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor
+      sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet,
+      consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur
+      adipiscing elit.
+    </p>
+    <p>Blend Name: {{ product.blend_name }}</p>
+    <p>Origin: {{ product.origin }}</p>
+    <p>Variety: {{ product.variety }}</p>
+    <p>Notes: {{ product.notes }}</p>
+    <p>Intensifier: {{ product.intensifier }}</p>
+  </div>
+</div>

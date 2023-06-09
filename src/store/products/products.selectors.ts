@@ -11,6 +11,8 @@ export const selectProducts = createSelector(
 );
 
 export const selectProduct = (id: number) =>
-  createSelector(selectFeature, (state: ProductsStateInterface) =>
-    state.products.find((item: ProductInterface) => item.id === id)
+  createSelector(
+    selectFeature,
+    (state: ProductsStateInterface) =>
+      state.products.find((item: ProductInterface) => item.id === id) || null
   );

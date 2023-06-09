@@ -17,7 +17,7 @@ export class ProductComponent {
     private router: Router
   ) {}
 
-  product!: ProductInterface;
+  product!: ProductInterface | null;
 
   ngOnInit() {
     const productId = this.route.snapshot.paramMap.get('id');
@@ -26,8 +26,9 @@ export class ProductComponent {
 
     this.store
       .pipe(select(selectProduct(Number(productId))))
-      .subscribe((product) =>
-        product ? (this.product = product) : this.router.navigate(['/products'])
-      );
+      .subscribe((product) => {
+        if (!product) this.router.navigate(['/products']);
+        this.product = product;
+      });
   }
 }

@@ -7,6 +7,7 @@ import { reducer } from '../../../store/products/products.reducer';
 import { ChipsCellRendererModule } from './chips-cell-renderer/chips-cell-renderer.module';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { ProductComponent } from './product/product.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [ProductsComponent, ProductComponent],
@@ -16,6 +17,7 @@ import { ProductComponent } from './product/product.component';
     StoreModule.forFeature('products', reducer),
     ChipsCellRendererModule,
     AppRoutingModule,
+    MatCardModule,
   ],
 })
 export class ProductsModule {}
