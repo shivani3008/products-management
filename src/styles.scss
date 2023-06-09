@@ -11,6 +11,7 @@
 
   --silver-color: #e1e3e6;
   --mist-color: #f7f7f9;
+  --primary-color-900: #501b13;
   --primary-color-800: #61291c;
   --ink-color: #52505f;
 }
@@ -35,5 +36,11 @@ body {
 .ag-theme-material {
   & .mdc-evolution-chip-set__chips {
     flex-wrap: nowrap;
+  }
+}
+
+.sidebar {
+  a > * {
+    border-radius: 0 !important;
   }
 }

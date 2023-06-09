@@ -1,13 +1,19 @@
-<div class="sidebar h-full fixed bg-primary left-0 z-10">
-  <nav class="navbar">
-    <ul class="list-none">
-      <li>
-        <a class="w-full" mat-button routerLink="/products" color="transparent">
-          <mat-icon style="margin: 0px" class="text-white scale-125">
-            home
-          </mat-icon>
-        </a>
-      </li>
-    </ul>
-  </nav>
-</div>
+<nav class="sidebar h-full fixed bg-primary left-0 z-10">
+  <ul class="list-none flex justify-center items-center flex-col">
+    <li>
+      <a
+        mat-icon-button
+        routerLink="/products"
+        routerLinkActive="active"
+        color="transparent"
+      >
+        <mat-icon class="text-white scale-125">home</mat-icon>
+      </a>
+    </li>
+    <li>
+      <a mat-icon-button color="transparent" routerLinkActive="active">
+        <mat-icon class="text-white scale-125">settings</mat-icon>
+      </a>
+    </li>
+  </ul>
+</nav>

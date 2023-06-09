@@ -1,3 +1,18 @@
 .sidebar {
   width: var(--sidebar-width);
+
+  .active {
+    background-color: var(--primary-color-900) !important;
+  }
+
+  ul {
+    li {
+      width: 100%;
+
+      a {
+        border-radius: 0;
+        width: 100%;
+      }
+    }
+  }
 }
