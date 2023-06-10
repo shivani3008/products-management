@@ -1,10 +1,28 @@
 import { Component } from '@angular/core';
-
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'products-management';
+  opened: boolean = false;
+  isMobile: boolean = false;
+  private subscription!: Subscription;
+
+  constructor(private breakpointObserver: BreakpointObserver) {}
+
+  ngOnInit() {
+    this.subscription = this.breakpointObserver
+      .observe(Breakpoints.Handset)
+      .subscribe((result) => {
+        this.isMobile = result.matches;
+        if (!this.isMobile) this.opened = true;
+      });
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
 }

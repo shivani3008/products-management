@@ -14,6 +14,10 @@ import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatListModule } from '@angular/material/list';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -32,6 +36,10 @@ import { MatButtonModule } from '@angular/material/button';
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
     MatIconModule,
     MatButtonModule,
+    MatToolbarModule,
+    MatListModule,
+    MatSidenavModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

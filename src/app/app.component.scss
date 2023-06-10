@@ -1,4 +1,7 @@
 .container {
-  padding-left: var(--sidebar-width);
   min-height: calc(100vh - var(--header-height));
+}
+
+.active {
+  background-color: var(--silver-color);
 }

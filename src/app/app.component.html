@@ -1,16 +1,45 @@
 <div>
-  <app-header></app-header>
-  <div>
-    <app-sidebar></app-sidebar>
-    <div class="container flex flex-col">
-      <div class="flex-1 px-10 py-5">
-        <router-outlet></router-outlet>
+  <mat-toolbar color="primary" class="sticky top-0 z-10">
+    <button
+      mat-icon-button
+      aria-label="Example icon-button with menu icon"
+      (click)="drawer.toggle()"
+      *ngIf="isMobile"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Product Management</span>
+  </mat-toolbar>
+  <mat-sidenav-container autosize>
+    <mat-sidenav
+      #drawer
+      [(opened)]="opened"
+      [mode]="isMobile ? 'over' : 'side'"
+      [fixedInViewport]="true"
+      [fixedTopGap]="isMobile ? 56 : 64"
+    >
+      <mat-nav-list>
+        <a mat-list-item routerLink="/products" routerLinkActive="active">
+          <mat-icon matListItemIcon>home</mat-icon>
+          Home
+        </a>
+        <a mat-list-item routerLink="#" routerLinkActive="active">
+          <mat-icon matListItemIcon>settings</mat-icon>
+          Settings
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div class="grid grid-rows-[1fr] container">
+        <div class="flex-1 px-10 py-5">
+          <router-outlet></router-outlet>
+        </div>
+        <footer
+          class="bg-mist h-16 border-silver border-t flex items-center justify-end pr-5"
+        >
+          Shivaniben Pathak
+        </footer>
       </div>
-      <footer
-        class="bg-mist h-16 border-silver border-t flex items-center justify-end pr-5"
-      >
-        Shivaniben Pathak
-      </footer>
-    </div>
-  </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 </div>
