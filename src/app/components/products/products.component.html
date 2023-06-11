@@ -1,15 +1,14 @@
 <h2 class="text-lg">Products</h2>
-<div style="height: 400px">
-  <ag-grid-angular
-    style="height: 100%"
-    class="ag-theme-alpine"
-    [rowData]="products$ | async"
-    [columnDefs]="columnDefs"
-    [defaultColDef]="defaultColDef"
-    [gridOptions]="gridOptions"
-    [pagination]="true"
-    [paginationPageSize]="paginationPageSize"
-    (gridReady)="onGridReady($event)"
-    (selectionChanged)="onSelectionChanged()"
-  ></ag-grid-angular>
-</div>
+<ag-grid-angular
+  style="height: 100%"
+  class="ag-theme-alpine"
+  [rowData]="products$ | async"
+  [columnDefs]="columnDefs"
+  [defaultColDef]="defaultColDef"
+  [gridOptions]="gridOptions"
+  [pagination]="true"
+  [paginationPageSize]="paginationPageSize"
+  (gridReady)="onGridReady($event)"
+  (selectionChanged)="onSelectionChanged()"
+  domLayout="autoHeight"
+></ag-grid-angular>
