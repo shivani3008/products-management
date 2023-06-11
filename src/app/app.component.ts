@@ -18,7 +18,7 @@ export class AppComponent {
       .observe(Breakpoints.Handset)
       .subscribe((result) => {
         this.isMobile = result.matches;
-        if (!this.isMobile) this.opened = true;
+        this.opened = !this.isMobile;
       });
   }
 
