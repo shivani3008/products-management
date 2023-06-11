@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Store, select } from '@ngrx/store';
 import { selectProduct } from 'src/app/store/products/products.selectors';
-import { AppStateInterface } from 'src/types/appState.interface';
-import { ProductInterface } from 'src/types/product.interface';
+import { AppStateInterface } from 'src/app/types/appState.interface';
+import { ProductInterface } from 'src/app/types/product.interface';
 
 @Component({
   selector: 'app-product',

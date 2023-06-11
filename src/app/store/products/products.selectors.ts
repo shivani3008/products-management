@@ -1,7 +1,7 @@
 import { createSelector } from '@ngrx/store';
-import { AppStateInterface } from 'src/types/appState.interface';
-import { ProductInterface } from 'src/types/product.interface';
-import { ProductsStateInterface } from 'src/types/productsState.interface';
+import { AppStateInterface } from 'src/app/types/appState.interface';
+import { ProductInterface } from 'src/app/types/product.interface';
+import { ProductsStateInterface } from 'src/app/types/productsState.interface';
 
 const selectFeature = (state: AppStateInterface) => state.products;
 

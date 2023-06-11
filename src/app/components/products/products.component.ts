@@ -10,8 +10,8 @@ import {
 import { Observable } from 'rxjs';
 import { getProducts } from 'src/app/store/products/products.actions';
 import { selectProducts } from 'src/app/store/products/products.selectors';
-import { AppStateInterface } from 'src/types/appState.interface';
-import { ProductInterface } from 'src/types/product.interface';
+import { AppStateInterface } from 'src/app/types/appState.interface';
+import { ProductInterface } from 'src/app/types/product.interface';
 import { ChipsCellRendererComponent } from './chips-cell-renderer/chips-cell-renderer.component';
 import { ImageRendererComponent } from './image-renderer/image-renderer.component';
 
