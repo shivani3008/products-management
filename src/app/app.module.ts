@@ -10,7 +10,6 @@ import { ProductsEffect } from 'src/store/products/products.effects';
 import { ProductsModule } from './components/products/products.module';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { HttpClientModule } from '@angular/common/http';
-import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -20,12 +19,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    PageNotFoundComponent,
-    HeaderComponent,
-    SidebarComponent,
-  ],
+  declarations: [AppComponent, PageNotFoundComponent, SidebarComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
