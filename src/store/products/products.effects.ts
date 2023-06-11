@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { getProducts, setProducts } from './products.actions';
-import { catchError, exhaustMap, map, of } from 'rxjs';
+import { catchError, map, mergeMap, of } from 'rxjs';
 import { RequestService } from 'src/app/services/request.service';
 import { CONFIG } from 'src/configs/config';
 import { ProductInterface } from 'src/types/product.interface';
+import { SnackbarService } from 'src/app/services/snackbar.service';
 
 @Injectable()
 export class ProductsEffect {
@@ -31,14 +32,17 @@ export class ProductsEffect {
   getProducts$ = createEffect(() =>
     this.actions$.pipe(
       ofType(getProducts),
-      exhaustMap(() =>
+      mergeMap(() =>
         this.requestService
           .createRequest(CONFIG.HTTP_METHODS.GET, CONFIG.URLS.GET_PRODUCTS(50))
           .pipe(
             map((response) =>
               setProducts({ products: this.mergeImages(response) })
             ),
-            catchError(() => of(setProducts({ products: [] })))
+            catchError(() => {
+              this.snackbarService.showSnackbar('Failed to load products');
+              return of(setProducts({ products: [] }));
+            })
           )
       )
     )
@@ -46,6 +50,7 @@ export class ProductsEffect {
 
   constructor(
     private actions$: Actions,
-    private requestService: RequestService
+    private requestService: RequestService,
+    private snackbarService: SnackbarService
   ) {}
 }

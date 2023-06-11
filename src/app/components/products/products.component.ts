@@ -50,6 +50,7 @@ export class ProductsComponent {
   };
   gridOptions: GridOptions = {
     rowSelection: 'single',
+    suppressMenuHide: true,
   };
   products$: Observable<ProductInterface[]>;
   paginationPageSize: number = 10;
