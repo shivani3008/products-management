@@ -1,6 +1,6 @@
-import { setProducts } from './products.actions';
-import { ProductsStateInterface } from 'src/types/productsState.interface';
 import { createReducer, on } from '@ngrx/store';
+import { ProductsStateInterface } from 'src/types/productsState.interface';
+import { setProducts } from './products.actions';
 
 const initialState: ProductsStateInterface = {
   products: [],

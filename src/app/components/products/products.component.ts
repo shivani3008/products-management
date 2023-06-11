@@ -1,19 +1,19 @@
 import { Component } from '@angular/core';
-import { ProductInterface } from 'src/types/product.interface';
+import { Router } from '@angular/router';
+import { Store, select } from '@ngrx/store';
 import {
   ColDef,
   GridApi,
   GridOptions,
   GridReadyEvent,
 } from 'ag-grid-community';
-import { Store, select } from '@ngrx/store';
+import { Observable } from 'rxjs';
 import { getProducts } from 'src/app/store/products/products.actions';
 import { selectProducts } from 'src/app/store/products/products.selectors';
 import { AppStateInterface } from 'src/types/appState.interface';
-import { Observable } from 'rxjs';
+import { ProductInterface } from 'src/types/product.interface';
 import { ChipsCellRendererComponent } from './chips-cell-renderer/chips-cell-renderer.component';
 import { ImageRendererComponent } from './image-renderer/image-renderer.component';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-products',

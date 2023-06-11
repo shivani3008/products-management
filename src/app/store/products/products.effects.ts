@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { getProducts, setProducts } from './products.actions';
 import { catchError, map, mergeMap, of } from 'rxjs';
 import { RequestService } from 'src/app/services/request.service';
+import { SnackbarService } from 'src/app/services/snackbar.service';
 import { CONFIG } from 'src/configs/config';
 import { ProductInterface } from 'src/types/product.interface';
-import { SnackbarService } from 'src/app/services/snackbar.service';
+import { getProducts, setProducts } from './products.actions';
 
 @Injectable()
 export class ProductsEffect {
