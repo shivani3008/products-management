@@ -31,8 +31,8 @@ export class ProductsComponent {
       filter: false,
       cellStyle: { display: 'flex', alignItems: 'center' },
     },
-    { field: 'id', headerName: 'Id', width: 100 },
-    { field: 'blend_name', headerName: 'Blend Name' },
+    { field: 'id', headerName: 'Id', width: 80 },
+    { field: 'blend_name', headerName: 'Blend Name', minWidth: 80 },
     {
       field: 'origin',
       headerName: 'Origin',
@@ -40,9 +40,9 @@ export class ProductsComponent {
       minWidth: 250,
       flex: 1,
     },
-    { field: 'variety', headerName: 'Variety' },
-    { field: 'notes', headerName: 'Notes', flex: 1 },
-    { field: 'intensifier', headerName: 'Intensifier', flex: 1 },
+    { field: 'variety', headerName: 'Variety', flex: 1, minWidth: 100 },
+    { field: 'notes', headerName: 'Notes', flex: 2, minWidth: 100 },
+    { field: 'intensifier', headerName: 'Intensifier', flex: 1, minWidth: 120 },
   ];
   defaultColDef: ColDef = {
     resizable: true,

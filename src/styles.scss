@@ -1,5 +1,5 @@
 @import "ag-grid-community/styles/ag-grid.css";
-@import "ag-grid-community/styles/ag-theme-material.css";
+@import "ag-grid-community/styles/ag-theme-alpine.css";
 
 @tailwind base;
 @tailwind components;
@@ -25,13 +25,14 @@ body {
   color: var(--ink-color);
 }
 
-.ag-theme-material {
+.ag-theme-alpine {
   .ag-ltr .ag-cell-focus:not(.ag-cell-range-selected):focus-within {
     border: 0;
   }
 
   .ag-paging-panel {
     justify-content: center;
+    text-align: center;
   }
 
   .mdc-evolution-chip-set__chips {
