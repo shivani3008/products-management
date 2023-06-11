@@ -9,6 +9,7 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
 import { ProductComponent } from './product/product.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
+import { ContentHeaderComponent } from '../content-header/content-header.component';
 
 @NgModule({
   declarations: [ProductsComponent, ProductComponent],
@@ -20,6 +21,7 @@ import { MatChipsModule } from '@angular/material/chips';
     AppRoutingModule,
     MatCardModule,
     MatChipsModule,
+    ContentHeaderComponent,
   ],
 })
 export class ProductsModule {}
