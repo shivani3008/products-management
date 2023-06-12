@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Store, select } from '@ngrx/store';
+import { Subscription } from 'rxjs';
 import { selectProduct } from 'src/app/store/products/products.selectors';
 import { AppStateInterface } from 'src/app/types/appState.interface';
 import { ProductInterface } from 'src/app/types/product.interface';
@@ -20,6 +21,7 @@ export class ProductComponent {
   product!: ProductInterface | null;
   origin: string[] = [];
   notes: string[] = [];
+  subscription!: Subscription;
 
   convertStringToArray = (str: string) =>
     str.split(',').map((item: string) => item.trim());
@@ -29,7 +31,7 @@ export class ProductComponent {
 
     if (!productId) this.router.navigate(['/products']);
 
-    this.store
+    this.subscription = this.store
       .pipe(select(selectProduct(Number(productId))))
       .subscribe((product) => {
         if (!product) {
@@ -41,5 +43,9 @@ export class ProductComponent {
         this.origin = this.convertStringToArray(product.origin);
         this.notes = this.convertStringToArray(product.notes);
       });
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 }
