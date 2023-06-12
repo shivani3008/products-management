@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { MatChipsModule } from '@angular/material/chips';
 import { ChipsCellRendererComponent } from './chips-cell-renderer.component';
 
 describe('ChipsCellRendererComponent', () => {
@@ -9,6 +10,7 @@ describe('ChipsCellRendererComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [ChipsCellRendererComponent],
+      imports: [MatChipsModule],
     });
     fixture = TestBed.createComponent(ChipsCellRendererComponent);
     component = fixture.componentInstance;

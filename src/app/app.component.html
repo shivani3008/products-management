@@ -1,6 +1,11 @@
 <div>
   <mat-toolbar color="primary" class="sticky top-0 z-10">
-    <button mat-icon-button (click)="drawer.toggle()" *ngIf="isMobile" data-testid="menu-button">
+    <button
+      mat-icon-button
+      (click)="drawer.toggle()"
+      *ngIf="isMobile"
+      data-testid="menu-button"
+    >
       <mat-icon>menu</mat-icon>
     </button>
     <mat-icon class="m-2 scale-125">conveyor_belt</mat-icon>
