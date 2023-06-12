@@ -22,32 +22,7 @@ export class RequestService {
     );
   };
 
-  createRequest = (
-    method: string,
-    url: string
-    // options?: {
-    //   body?: any;
-    //   headers?:
-    //     | HttpHeaders
-    //     | {
-    //         [header: string]: string | string[];
-    //       };
-    //   context?: HttpContext;
-    //   observe?: 'body';
-    //   params?:
-    //     | HttpParams
-    //     | {
-    //         [param: string]:
-    //           | string
-    //           | number
-    //           | boolean
-    //           | ReadonlyArray<string | number | boolean>;
-    //       };
-    //   reportProgress?: boolean;
-    //   responseType: 'arraybuffer';
-    //   withCredentials?: boolean;
-    // }
-  ): Observable<any> => {
+  createRequest = (method: string, url: string): Observable<any> => {
     return this.http
       .request(method, url)
       .pipe(map(this.handleSuccess), catchError(this.handleError));

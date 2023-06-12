@@ -10,11 +10,9 @@ import { Subscription } from 'rxjs';
 export class AppComponent {
   opened: boolean = false;
   isMobile: boolean = false;
-  private subscription!: Subscription;
+  private subscription: Subscription;
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
-
-  ngOnInit() {
+  constructor(private breakpointObserver: BreakpointObserver) {
     this.subscription = this.breakpointObserver
       .observe(Breakpoints.Handset)
       .subscribe((result) => {
